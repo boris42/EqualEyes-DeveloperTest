@@ -12,16 +12,48 @@ struct StudentDetail: View {
     var student: Student
     var body: some View {
         VStack {
-            Text(student.name)
-            HStack {
-                Text("school")
-                Text(student.school?.name ?? "")
+            VStack(alignment: .center, spacing: 5) {
+                GeometryReader { geo in
+                    HStack(alignment: .top) {
+                        URLImage(url: self.student.school?.imageUrl)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: geo.size.height)
+                            .clipped()
+                    }
+                    .frame(maxHeight: .infinity)
+                }
+                HStack(alignment: .center) {
+                    Text(student.name)
+                        .font(.headline)
+                        .frame(alignment: .leading)
+                    VStack(alignment: .trailing, spacing: 7) {
+                        HStack {
+                            Text("grade")
+                            Text(String(student.grade))
+                        }
+                    }
+                    .font(.footnote)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                }.padding(EdgeInsets(top: 5, leading: 20, bottom: 0, trailing: 20 ))
+                Divider()
+                    .padding(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0 ))
+                Group {
+                    Text("about")
+                        .font(.headline)
+                    Text(student.about ?? "")
+                        .font(.footnote)
+                        .frame(minHeight: 80, alignment: .top)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(EdgeInsets(top: 0, leading: 20, bottom: 10, trailing: 20 ))
             }
-            HStack {
-                Text("grade")
-                Text(String(student.grade))
-            }
-            Text(student.about ?? "")
+            .background(Color.offWhite)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .shadow(color: Color.gray.opacity(0.5), radius: 7, x: 7, y: 7)
+            .padding(15)
+            .navigationBarTitle("details", displayMode: .inline)
+            Spacer()
+                .frame(height: 40)
         }
     }
 }

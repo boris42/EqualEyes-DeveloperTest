@@ -22,17 +22,17 @@ struct StudentRow: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Image(systemName: "chevron.right")
                     .padding(10)
-            }.padding(EdgeInsets(top: 15, leading: 15, bottom: 0, trailing: 15 ))
+            }.padding(EdgeInsets(top: 5, leading: 15, bottom: 0, trailing: 15 ))
             HStack {
                 Text("grade")
                 Text(String(student.grade))
             }
             .font(.caption)
-            .padding(EdgeInsets(top: 10, leading: 15, bottom: 20, trailing: 15 ))
+            .padding(EdgeInsets(top: 5, leading: 15, bottom: 10, trailing: 15 ))
         }
         .background(Color.offWhite)
         .clipShape(RoundedRectangle(cornerRadius: 10))
-        .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20 ))
+        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10 ))
         .shadow(color: Color.gray.opacity(0.5), radius: 7, x: 7, y: 7)
     }
 }
