@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  EqualEyes-DeveloperTest
+
+  Created by Boris Herman on 24/06/2020.
+  Copyright © 2020 Sight&Sound s.p. All rights reserved.
+*/
+"teachers" = "Teachers";
+"students" = "Students";
+"class" = "Class:";
+"school" = "School:";
+"contact" = "Contact";
+"email" = "Email";
+"message" = "Message";
+"call" = "Call";
+"about" = "About";
+"details" = "Details";
+"grade" = "Grade:";
