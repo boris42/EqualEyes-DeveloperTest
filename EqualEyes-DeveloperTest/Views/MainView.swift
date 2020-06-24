@@ -9,8 +9,8 @@
 import SwiftUI
 
 func IsDevelopment() -> String {
-    guard let val =  Bundle.main.infoDictionary?["IsDevelopment"] as? Bool else { return " - ERR" }
-    return val ? " - DEV" : " - PROD"
+    guard let val =  Bundle.main.infoDictionary?["IsDevelopment"] as? Bool else { return "" }
+    return val ? " - DEV" : ""
 }
 
 struct MainView: View {

@@ -64,9 +64,9 @@ fileprivate struct TabBarController: UIViewControllerRepresentable {
         tabBarController.delegate = context.coordinator
         tabBarController.selectedIndex = 0
         // FIXME: only needed because of bug in latest beta
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             tabBarController.selectedIndex = 1
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 tabBarController.selectedIndex = 0
             }
         }

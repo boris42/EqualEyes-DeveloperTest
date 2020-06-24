@@ -62,6 +62,8 @@
 		9A9A885624A37EED00F256DF /* UIKitTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTabView.swift; sourceTree = "<group>"; };
 		9A9A885824A380B100F256DF /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		9A9A885A24A380D400F256DF /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
+		9A9A885D24A3B39700F256DF /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9A9A885F24A3B3A200F256DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				9A9A881524A2959F00F256DF /* Base */,
+				9A9A885D24A3B39700F256DF /* fr */,
+				9A9A885F24A3B3A200F256DF /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
