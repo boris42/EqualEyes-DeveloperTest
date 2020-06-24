@@ -8,9 +8,14 @@
 
 import SwiftUI
 
+func IsDevelopment() -> String {
+    guard let val =  Bundle.main.infoDictionary?["IsDevelopment"] as? Bool else { return " - ERR" }
+    return val ? " - DEV" : " - PROD"
+}
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        Text("Hello, World!"+IsDevelopment())
     }
 }
 
