@@ -29,6 +29,8 @@
 		9A9A885324A3780400F256DF /* StudentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885224A3780400F256DF /* StudentRow.swift */; };
 		9A9A885524A3780D00F256DF /* StudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885424A3780D00F256DF /* StudentDetail.swift */; };
 		9A9A885724A37EED00F256DF /* UIKitTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885624A37EED00F256DF /* UIKitTabView.swift */; };
+		9A9A885924A380B100F256DF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885824A380B100F256DF /* ImageLoader.swift */; };
+		9A9A885B24A380D400F256DF /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885A24A380D400F256DF /* URLImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		9A9A885224A3780400F256DF /* StudentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRow.swift; sourceTree = "<group>"; };
 		9A9A885424A3780D00F256DF /* StudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetail.swift; sourceTree = "<group>"; };
 		9A9A885624A37EED00F256DF /* UIKitTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTabView.swift; sourceTree = "<group>"; };
+		9A9A885824A380B100F256DF /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		9A9A885A24A380D400F256DF /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				9A9A884824A3701100F256DF /* LocalizedString.swift */,
+				9A9A885824A380B100F256DF /* ImageLoader.swift */,
 				9A9A884C24A3750800F256DF /* Colors .swift */,
 				9A9A885624A37EED00F256DF /* UIKitTabView.swift */,
 			);
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				9A9A880D24A2959C00F256DF /* MainView.swift */,
+				9A9A885A24A380D400F256DF /* URLImage.swift */,
 				9A9A884624A36F7600F256DF /* TeachersList.swift */,
 				9A9A885024A3768700F256DF /* TeacherRow.swift */,
 				9A9A884E24A375AD00F256DF /* TeacherDetail.swift */,
@@ -250,12 +256,14 @@
 				9A9A883724A36BE000F256DF /* Teacher.swift in Sources */,
 				9A9A885124A3768700F256DF /* TeacherRow.swift in Sources */,
 				9A9A883D24A36BFE00F256DF /* ExtraInfo.swift in Sources */,
+				9A9A885B24A380D400F256DF /* URLImage.swift in Sources */,
 				9A9A884924A3701100F256DF /* LocalizedString.swift in Sources */,
 				9A9A884724A36F7600F256DF /* TeachersList.swift in Sources */,
 				9A9A884124A36C8100F256DF /* StudentsVM.swift in Sources */,
 				9A9A883B24A36BED00F256DF /* School.swift in Sources */,
 				9A9A880A24A2959C00F256DF /* AppDelegate.swift in Sources */,
 				9A9A884F24A375AD00F256DF /* TeacherDetail.swift in Sources */,
+				9A9A885924A380B100F256DF /* ImageLoader.swift in Sources */,
 				9A9A885524A3780D00F256DF /* StudentDetail.swift in Sources */,
 				9A9A884B24A3705300F256DF /* StudentsList.swift in Sources */,
 				9A9A885324A3780400F256DF /* StudentRow.swift in Sources */,
