@@ -14,23 +14,19 @@ func IsDevelopment() -> String {
 }
 
 struct MainView: View {
+    @ObservedObject var teachersVM: TeachersFetcher = TeachersFetcher()
+    @ObservedObject var studentsVM: StudentsFetcher = StudentsFetcher()
     var body: some View {
-        VStack {
-            Group{
-                Text("Hello, World!"+IsDevelopment())
-                Text("teachers")
-                Text("students")
-                Text("class")
-                Text("school")
-                Text("contact")
+        TabView {
+            TeachersList(vm: teachersVM)
+                .tabItem {
+                    Image(systemName: "person.circle")
+                    Text("teachers")
             }
-            Group {
-                Text("email")
-                Text("message")
-                Text("call")
-                Text("about")
-                Text("grade")
-                Text("details")
+            StudentsList(vm: studentsVM)
+                .tabItem {
+                    Image(systemName: "person.3.circle")
+                    Text("students")
             }
         }
     }
