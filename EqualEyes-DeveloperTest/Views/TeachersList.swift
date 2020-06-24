@@ -13,14 +13,20 @@ struct TeachersList: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach (vm.teachers) { teacher in
-                    NavigationLink(destination: TeacherDetail(teacher: teacher)) {
-                        TeacherRow(teacher: teacher)
+            ScrollView {
+                Divider()
+                    .padding(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0 ))
+                VStack(spacing:10) {
+                    ForEach (vm.teachers) { teacher in
+                        NavigationLink(destination: TeacherDetail(teacher: teacher)) {
+                            TeacherRow(teacher: teacher)
+                                .frame(maxWidth: .infinity, maxHeight: 150)
+                        }
+                        .navigationBarTitle(Text("teachers".localized+IsDevelopment()))
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
-            }.navigationBarTitle(Text("teachers".localized+IsDevelopment()))
-            
+            }
         }
         .onAppear(perform: {self.vm.loadSampleData()})
     }
