@@ -16,6 +16,7 @@ func IsDevelopment() -> String {
 struct MainView: View {
     @ObservedObject var teachersVM: TeachersFetcher = TeachersFetcher()
     @ObservedObject var studentsVM: StudentsFetcher = StudentsFetcher()
+    
     var body: some View {
         TabView {
             TeachersList(vm: teachersVM)

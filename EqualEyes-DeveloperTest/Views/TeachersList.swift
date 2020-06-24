@@ -10,14 +10,17 @@ import SwiftUI
 
 struct TeachersList: View {
     @ObservedObject var vm : TeachersFetcher
+    
     var body: some View {
         NavigationView {
             List {
                 ForEach (vm.teachers) { teacher in
-                    Text(teacher.name)
+                    NavigationLink(destination: TeacherDetail(teacher: teacher)) {
+                        TeacherRow(teacher: teacher)
+                    }
                 }
             }.navigationBarTitle(Text("teachers".localized+IsDevelopment()))
-         
+            
         }
         .onAppear(perform: {self.vm.loadSampleData()})
     }

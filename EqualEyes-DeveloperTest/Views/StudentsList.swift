@@ -15,7 +15,9 @@ struct StudentsList: View {
         NavigationView {
             List {
                 ForEach (vm.students) { student in
-                    Text(student.name)
+                    NavigationLink(destination: StudentDetail(student: student)) {
+                        StudentRow(student: student)
+                    }
                 }
             }.navigationBarTitle(Text("students".localized+IsDevelopment()))
         }

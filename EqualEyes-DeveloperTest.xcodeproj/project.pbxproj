@@ -23,6 +23,11 @@
 		9A9A884724A36F7600F256DF /* TeachersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A884624A36F7600F256DF /* TeachersList.swift */; };
 		9A9A884924A3701100F256DF /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A884824A3701100F256DF /* LocalizedString.swift */; };
 		9A9A884B24A3705300F256DF /* StudentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A884A24A3705300F256DF /* StudentsList.swift */; };
+		9A9A884D24A3750800F256DF /* Colors .swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A884C24A3750800F256DF /* Colors .swift */; };
+		9A9A884F24A375AD00F256DF /* TeacherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A884E24A375AD00F256DF /* TeacherDetail.swift */; };
+		9A9A885124A3768700F256DF /* TeacherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885024A3768700F256DF /* TeacherRow.swift */; };
+		9A9A885324A3780400F256DF /* StudentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885224A3780400F256DF /* StudentRow.swift */; };
+		9A9A885524A3780D00F256DF /* StudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885424A3780D00F256DF /* StudentDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +51,11 @@
 		9A9A884624A36F7600F256DF /* TeachersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersList.swift; sourceTree = "<group>"; };
 		9A9A884824A3701100F256DF /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		9A9A884A24A3705300F256DF /* StudentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsList.swift; sourceTree = "<group>"; };
+		9A9A884C24A3750800F256DF /* Colors .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Colors .swift"; sourceTree = "<group>"; };
+		9A9A884E24A375AD00F256DF /* TeacherDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherDetail.swift; sourceTree = "<group>"; };
+		9A9A885024A3768700F256DF /* TeacherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherRow.swift; sourceTree = "<group>"; };
+		9A9A885224A3780400F256DF /* StudentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRow.swift; sourceTree = "<group>"; };
+		9A9A885424A3780D00F256DF /* StudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				9A9A884824A3701100F256DF /* LocalizedString.swift */,
+				9A9A884C24A3750800F256DF /* Colors .swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -132,7 +143,11 @@
 			children = (
 				9A9A880D24A2959C00F256DF /* MainView.swift */,
 				9A9A884624A36F7600F256DF /* TeachersList.swift */,
+				9A9A885024A3768700F256DF /* TeacherRow.swift */,
+				9A9A884E24A375AD00F256DF /* TeacherDetail.swift */,
 				9A9A884A24A3705300F256DF /* StudentsList.swift */,
+				9A9A885224A3780400F256DF /* StudentRow.swift */,
+				9A9A885424A3780D00F256DF /* StudentDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,16 +245,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A9A883724A36BE000F256DF /* Teacher.swift in Sources */,
+				9A9A885124A3768700F256DF /* TeacherRow.swift in Sources */,
 				9A9A883D24A36BFE00F256DF /* ExtraInfo.swift in Sources */,
 				9A9A884924A3701100F256DF /* LocalizedString.swift in Sources */,
 				9A9A884724A36F7600F256DF /* TeachersList.swift in Sources */,
 				9A9A884124A36C8100F256DF /* StudentsVM.swift in Sources */,
 				9A9A883B24A36BED00F256DF /* School.swift in Sources */,
 				9A9A880A24A2959C00F256DF /* AppDelegate.swift in Sources */,
+				9A9A884F24A375AD00F256DF /* TeacherDetail.swift in Sources */,
+				9A9A885524A3780D00F256DF /* StudentDetail.swift in Sources */,
 				9A9A884B24A3705300F256DF /* StudentsList.swift in Sources */,
+				9A9A885324A3780400F256DF /* StudentRow.swift in Sources */,
 				9A9A880C24A2959C00F256DF /* SceneDelegate.swift in Sources */,
 				9A9A883F24A36C7900F256DF /* TeachersVM.swift in Sources */,
 				9A9A883924A36BE500F256DF /* Student.swift in Sources */,
+				9A9A884D24A3750800F256DF /* Colors .swift in Sources */,
 				9A9A880E24A2959C00F256DF /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
