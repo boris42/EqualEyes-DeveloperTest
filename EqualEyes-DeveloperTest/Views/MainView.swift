@@ -25,7 +25,7 @@ struct MainView: View {
             }
             StudentsList(vm: studentsVM)
                 .tabItem {
-                    Image(systemName: "person.3.circle")
+                    Image(systemName: "person.3")
                     Text("students")
             }
         }
