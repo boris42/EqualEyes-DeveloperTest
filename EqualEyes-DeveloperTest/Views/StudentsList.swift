@@ -28,7 +28,7 @@ struct StudentsList: View {
                  }
              }
          }
-         .onAppear(perform: {self.vm.loadSampleData()})
+         .onAppear(perform: {self.vm.loadAllStudents()})
      }
 }
 
