@@ -18,17 +18,11 @@ struct MainView: View {
     @ObservedObject var studentsVM: StudentsFetcher = StudentsFetcher()
     
     var body: some View {
-        TabView {
+        UIKitTabView {
             TeachersList(vm: teachersVM)
-                .tabItem {
-                    Image(systemName: "person.circle")
-                    Text("teachers")
-            }
+                .tab(title: "teachers", image: "person.circle", selectedImage: "person.circle.fill")
             StudentsList(vm: studentsVM)
-                .tabItem {
-                    Image(systemName: "person.3")
-                    Text("students")
-            }
+                .tab(title: "students", image: "person.3", selectedImage: "person.3.fill")
         }
     }
 }

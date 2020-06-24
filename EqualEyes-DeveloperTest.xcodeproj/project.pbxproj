@@ -28,6 +28,7 @@
 		9A9A885124A3768700F256DF /* TeacherRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885024A3768700F256DF /* TeacherRow.swift */; };
 		9A9A885324A3780400F256DF /* StudentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885224A3780400F256DF /* StudentRow.swift */; };
 		9A9A885524A3780D00F256DF /* StudentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885424A3780D00F256DF /* StudentDetail.swift */; };
+		9A9A885724A37EED00F256DF /* UIKitTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9A885624A37EED00F256DF /* UIKitTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		9A9A885024A3768700F256DF /* TeacherRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherRow.swift; sourceTree = "<group>"; };
 		9A9A885224A3780400F256DF /* StudentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRow.swift; sourceTree = "<group>"; };
 		9A9A885424A3780D00F256DF /* StudentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetail.swift; sourceTree = "<group>"; };
+		9A9A885624A37EED00F256DF /* UIKitTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				9A9A884824A3701100F256DF /* LocalizedString.swift */,
 				9A9A884C24A3750800F256DF /* Colors .swift */,
+				9A9A885624A37EED00F256DF /* UIKitTabView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				9A9A884B24A3705300F256DF /* StudentsList.swift in Sources */,
 				9A9A885324A3780400F256DF /* StudentRow.swift in Sources */,
 				9A9A880C24A2959C00F256DF /* SceneDelegate.swift in Sources */,
+				9A9A885724A37EED00F256DF /* UIKitTabView.swift in Sources */,
 				9A9A883F24A36C7900F256DF /* TeachersVM.swift in Sources */,
 				9A9A883924A36BE500F256DF /* Student.swift in Sources */,
 				9A9A884D24A3750800F256DF /* Colors .swift in Sources */,
