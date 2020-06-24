@@ -12,17 +12,24 @@ struct StudentsList: View {
     @ObservedObject var vm : StudentsFetcher
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach (vm.students) { student in
-                    NavigationLink(destination: StudentDetail(student: student)) {
-                        StudentRow(student: student)
-                    }
-                }
-            }.navigationBarTitle(Text("students".localized+IsDevelopment()))
-        }
-        .onAppear(perform: {self.vm.loadSampleData()})
-    }
+         NavigationView {
+             ScrollView {
+                 Divider()
+                     .padding(EdgeInsets(top: 5, leading: 0, bottom: 10, trailing: 0 ))
+                 VStack(spacing:10) {
+                    ForEach (vm.students) { student in
+                         NavigationLink(destination: StudentDetail(student: student)) {
+                             StudentRow(student: student)
+                                 .frame(maxWidth: .infinity, maxHeight: 150)
+                         }
+                         .navigationBarTitle(Text("students".localized+IsDevelopment()))
+                     }
+                     .buttonStyle(PlainButtonStyle())
+                 }
+             }
+         }
+         .onAppear(perform: {self.vm.loadSampleData()})
+     }
 }
 
 struct StudentsList_Previews: PreviewProvider {
