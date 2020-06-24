@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  EqualEyes-DeveloperTest
 //
 //  Created by Boris Herman on 23/06/2020.
