@@ -28,7 +28,7 @@ struct TeachersList: View {
                 }
             }
         }
-        .onAppear(perform: {self.vm.loadAllTeachers()})
+        .onAppear(perform: {self.vm.loadData()})
     }
 }
 
