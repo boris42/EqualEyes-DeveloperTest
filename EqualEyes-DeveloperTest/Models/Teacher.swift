@@ -21,6 +21,20 @@ struct Teacher : Decodable, Identifiable {
         case className = "class"
         case imageUrl = "image_url"
     }
-
+    init(id: Int, name: String, imageUrl: String, className: String, schoolId: Int, school: School? = nil, about: String? = nil) {
+        self.id = id
+        self.name = name
+        self.imageUrl = imageUrl
+        self.className = className
+        self.schoolId = schoolId
+    }
+    init(teacher: Teacher, school: School) {
+        self = teacher
+        self.school = school
+    }
+    init(teacher: Teacher, description: String) {
+        self = teacher
+        self.about = description
+    }
     static let APIUrl : String = "https://zpk2uivb1i.execute-api.us-east-1.amazonaws.com/dev/teachers/"
 }
