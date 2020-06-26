@@ -11,45 +11,47 @@ import Combine
 
 final class StudentsFetcher: ObservableObject {
     @Published var students : [Student] = []
-
+    
     private var dataLoader : AnyCancellable!
-
+    
     deinit {
         dataLoader.cancel()
     }
-
+    
     func loadData() {
-        if let url = URL(string: Student.APIUrl) {
-            dataLoader = URLSession.shared.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: [Student].self, decoder: JSONDecoder())
-            .assertNoFailure()
-            .flatMap { $0.publisher }
-            .flatMap { student in
-                URLSession.shared.dataTaskPublisher(for: URL(string: School.APIUrl+String(student.schoolId))!)
-                    .map { $0.data}
-                    .decode(type: School.self, decoder: JSONDecoder())
-                    .catch {_ in
-                        Just(School(id: student.schoolId, name: "", imageUrl: ""))
+        if students.isEmpty {
+            if let url = URL(string: Student.APIUrl) {
+                dataLoader = URLSession.shared.dataTaskPublisher(for: url)
+                    .map { $0.data }
+                    .decode(type: [Student].self, decoder: JSONDecoder())
+                    .assertNoFailure()
+                    .flatMap { $0.publisher }
+                    .flatMap { student in
+                        URLSession.shared.dataTaskPublisher(for: URL(string: School.APIUrl+String(student.schoolId))!)
+                            .map { $0.data}
+                            .decode(type: School.self, decoder: JSONDecoder())
+                            .catch {_ in
+                                Just(School(id: student.schoolId, name: "", imageUrl: ""))
+                        }
+                        .map { school in
+                            Student(student: student, school: school)
+                        }
                 }
-                .map { school in
-                    Student(student: student, school: school)
-                }
-            }
-            .flatMap { student in
-                URLSession.shared.dataTaskPublisher(for: URL(string: Student.APIUrl+String(student.id))!)
-                    .map { $0.data}
-                    .decode(type: ExtraInfo.self, decoder: JSONDecoder())
-                    .catch {_ in
-                        Just(ExtraInfo(id: student.id, description: ""))
+                .flatMap { student in
+                    URLSession.shared.dataTaskPublisher(for: URL(string: Student.APIUrl+String(student.id))!)
+                        .map { $0.data}
+                        .decode(type: ExtraInfo.self, decoder: JSONDecoder())
+                        .catch {_ in
+                            Just(ExtraInfo(id: student.id, description: ""))
                     }
                     .map { info in
                         Student(student: student, description: info.description)
                     }
+                }
+                .collect()
+                .receive(on: RunLoop.main)
+                .assign(to: \.students, on: self)
             }
-            .collect()
-            .receive(on: RunLoop.main)
-            .assign(to: \.students, on: self)
         }
     }
     

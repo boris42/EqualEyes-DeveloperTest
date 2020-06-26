@@ -7,26 +7,41 @@
 //
 
 import UIKit
+import Combine
 
 final class ImageLoader: ObservableObject {
-    static let imageCache = NSCache<AnyObject, AnyObject>()
+    static let imageCache = NSCache<NSURL, UIImage>()
 
-    private var task: URLSessionDataTask?
-    @Published var data: Data?
+    @Published var image: UIImage?
 
-    init(_ url: URL?) {
-        if let url = url {
-            task = URLSession.shared.dataTask(with: url) { data, response, error in
-                if let data = data, let imageToCache = UIImage(data: data) {
-                    Self.imageCache.setObject(imageToCache, forKey: url as AnyObject)
-                }
-                DispatchQueue.main.async { self.data = data }
-            }
-            task?.resume()
-        }
+    var url: URL? {
+        didSet { loadImage() }
     }
 
-    deinit {
-        task?.cancel()
+    private var dataLoader: AnyCancellable?
+
+    init() {}
+        
+    init(_ url: URL?) {
+        self.url = url
+    }
+
+    deinit { dataLoader?.cancel() }
+
+    func loadImage() {
+        dataLoader?.cancel()
+        guard let url = url else { return }
+        if let cachedImage = ImageLoader.imageCache.object(forKey: url as NSURL) {
+            self.image = cachedImage
+        } else {
+            dataLoader =  URLSession.shared.dataTaskPublisher(for: url)
+                .compactMap { UIImage(data: $0.data) }
+                .assertNoFailure()
+                .receive(on: RunLoop.main)
+                .sink { image in
+                    self.image = image
+                    Self.imageCache.setObject(image, forKey: url as NSURL)
+            }
+        }
     }
 }
